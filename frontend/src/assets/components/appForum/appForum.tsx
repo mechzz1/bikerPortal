@@ -1,16 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './appForum.css'
+
 function appForum() {
     return (
         <>
 
             <div className="card1 bg-light">
-            <div className="username pb-2">Topic</div>
+                <div className="username pb-2">Topic</div>
 
                 <div className="card-header1">
                     <div className="user-info d-flex">
-                            <div className="initial-circle">J</div>
-                            <div className="username align-items-center d-flex pl-2">John Doe</div>
+                        <div className="initial-circle">J</div>
+                        <div className="username align-items-center d-flex pl-2">John Doe</div>
                     </div>
                     <span className="timestamp">May 14, 2024</span>
                 </div>
@@ -19,6 +20,7 @@ function appForum() {
                     et magna sagittis, lacinia quam eu, fermentum velit.
                 </div>
             </div>
+            
         </>
     )
 }

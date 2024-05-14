@@ -9,6 +9,9 @@ import About from './pages/about/about';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Login from './pages/login/login';
 import Forums from './pages/forums/forums';
+import 'primereact/resources/themes/lara-light-indigo/theme.css'; //theme
+import 'primereact/resources/primereact.min.css'; //core css
+
 function App() {
   const [count, setCount] = useState(0)
 
