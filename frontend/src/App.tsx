@@ -8,6 +8,7 @@ import Landing from './pages/landing/landing';
 import About from './pages/about/about';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Login from './pages/login/login';
+import Forums from './pages/forums/forums';
 function App() {
   const [count, setCount] = useState(0)
 
@@ -16,6 +17,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/forum" element={<Forums />} />
+          <Route path="/home" element={<Landing />} />
+
+
           {/* <Route element={<PrivateRoutes />}>
             <Route path="dashboard/*" element={<SideBar />}>
               <Route index path="main" element={<Home />} />

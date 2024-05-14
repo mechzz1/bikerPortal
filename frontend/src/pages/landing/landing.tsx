@@ -1,53 +1,14 @@
 import React from 'react'
 import IMAGES from '../../assets/images/images'
 import Slider from '../../assets/components/slider/slider'
+import NavBar from '../../assets/components/navBar/navBar'
 function landing() {
     return (
         <>
             <div className="header_section header_bg">
-         
+
                 <div className="banner_section layout_padding">
-                <nav className="navbar navbar-expand-lg navbar-light" style={{backgroundColor:"transparent !important"}}>
-                    <a href="index.html" className="logo"><img src={IMAGES.logo}/></a>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav ml-auto">
-                            <li className="nav-item active">
-                                <a className="nav-link" href="index.html">Home</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="about.html">About</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="cycle.html">Our Cycle</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="shop.html">Shop</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="news.html">News</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="contact.html">Contact Us</a>
-                            </li>
-                        </ul>
-                        <form className="form-inline my-2 my-lg-0">
-                            <div className="login_menu">
-                                <ul>
-                                    <li><a href="#">Login</a></li>
-                                    {/* <li><a href="#"><img src="images/trolly-icon.png"></a></li>
-                                    <li><a href="#"><img src="images/search-icon.png"></a></li> */}
-                                </ul>
-                            </div>
-                            <div></div>
-                        </form>
-                    </div>
-                    <div id="main">
-                        {/* <span style="font-size:36px;cursor:pointer; color: #fff" onclick="openNav()"><img src="images/toggle-icon.png" style="height: 30px;"></span> */}
-                    </div>
-                </nav>
+                    <NavBar />
                     <div id="main_slider" className="carousel slide" data-ride="carousel">
                         <div className="carousel-inner">
                             <div className="carousel-item active">
@@ -55,7 +16,7 @@ function landing() {
                                     <div className="row">
                                         <div className="col-md-7">
                                             <div className="best_text">Best</div>
-                                            <div className="image_1"><img src={IMAGES.header3}/></div>
+                                            <div className="image_1"><img src={IMAGES.header3} /></div>
                                         </div>
                                         <div className="col-md-5">
                                             <h1 className="banner_taital">New Model Bike</h1>
@@ -70,7 +31,7 @@ function landing() {
                                     <div className="row">
                                         <div className="col-md-7">
                                             <div className="best_text">Best</div>
-                                            <div className="image_1"><img src={IMAGES.header2}/></div>
+                                            <div className="image_1"><img src={IMAGES.header2} /></div>
                                         </div>
                                         <div className="col-md-5">
                                             <h1 className="banner_taital">New Model Cycle</h1>
@@ -85,7 +46,7 @@ function landing() {
                                     <div className="row">
                                         <div className="col-md-7">
                                             <div className="best_text">Best</div>
-                                            <div className="image_1"><img src={IMAGES.header1}/></div>
+                                            <div className="image_1"><img src={IMAGES.header1} /></div>
                                         </div>
                                         <div className="col-md-5">
                                             <h1 className="banner_taital">New Model Cycle</h1>
@@ -106,7 +67,7 @@ function landing() {
                 </div>
             </div>
             <div className="">
-                <Slider/>
+                <Slider />
             </div>
             <div className="cycle_section layout_padding" >
                 <div className="container">
@@ -117,7 +78,7 @@ function landing() {
                             <div className="col-md-6">
                                 <div className="box_main">
                                     <h6 className="number_text">01</h6>
-                                    <div className="image_2"><img src={IMAGES.sale1}/></div>
+                                    <div className="image_2"><img src={IMAGES.sale1} /></div>
                                 </div>
                             </div>
                             <div className="col-md-6">
@@ -125,7 +86,7 @@ function landing() {
                                 <p className="lorem_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
                                 <div className="btn_main">
                                     <div className="buy_bt"><a href="#">Buy Now</a></div>
-                                    <h4 className="price_text">Price <span style={{color: "#f7c17b"}}>$</span> <span style={{color: "#325662"}}>200</span></h4>
+                                    <h4 className="price_text">Price <span style={{ color: "#f7c17b" }}>$</span> <span style={{ color: "#325662" }}>200</span></h4>
                                 </div>
                             </div>
                         </div>
@@ -137,19 +98,19 @@ function landing() {
                                 <p className="lorem_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
                                 <div className="btn_main">
                                     <div className="buy_bt"><a href="#">Buy Now</a></div>
-                                    <h4 className="price_text">Price <span style={{color: "#f7c17b"}}>$</span> <span style={{color: "#325662"}}>200</span></h4>
+                                    <h4 className="price_text">Price <span style={{ color: "#f7c17b" }}>$</span> <span style={{ color: "#325662" }}>200</span></h4>
 
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="box_main_3">
                                     <h6 className="number_text_2">02</h6>
-                                    <div className="image_2"><img src={IMAGES.sale3}/></div>
+                                    <div className="image_2"><img src={IMAGES.sale3} /></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                   
+
                     <div className="read_btn_main">
                         <div className="read_bt"><a href="#">Read More</a></div>
                     </div>
@@ -162,7 +123,7 @@ function landing() {
                     <p className="about_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters
                     </p>
                     <div className="about_main">
-                        <img src={IMAGES.aboutBike} className="image_5" / >
+                        <img src={IMAGES.aboutBike} className="image_5" />
                     </div>
                     <div className="read_bt_1"><a href="#">Read More</a></div>
                 </div>
@@ -177,7 +138,7 @@ function landing() {
                                     <h1 className="client_taital">Says Customers</h1>
                                     <div className="client_section_2">
                                         <div className="client_left">
-                                            <div><img src="images/client-img.png" className="client_img"/></div>
+                                            <div><img src="images/client-img.png" className="client_img" /></div>
                                         </div>
                                         <div className="client_right">
                                             {/* <div className="quote_icon"><img src="images/quote-icon.png"></div> */}
@@ -211,10 +172,10 @@ function landing() {
                                     <h1 className="client_taital">Says Customers</h1>
                                     <div className="client_section_2">
                                         <div className="client_left">
-                                            <div><img src="images/client-img.png" className="client_img"/></div>
+                                            <div><img src="images/client-img.png" className="client_img" /></div>
                                         </div>
                                         <div className="client_right">
-                                            <div className="quote_icon"><img src="images/quote-icon.png"/></div>
+                                            <div className="quote_icon"><img src="images/quote-icon.png" /></div>
                                             <p className="client_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
                                             <h3 className="client_name">Channery</h3>
                                         </div>
@@ -240,7 +201,7 @@ function landing() {
                         <div className="row">
                             <div className="col-sm-4">
                                 <div className="box_main_1">
-                                    <div className="zoomout frame"><img src="images/img-6.png"/></div>
+                                    <div className="zoomout frame"><img src="images/img-6.png" /></div>
                                     <div className="padding_15">
                                         <h2 className="speed_text">Speed cycle</h2>
                                         {/* <div className="post_text">Post by : Den <span style="float: right;">20-12-2019</span></div> */}
@@ -250,7 +211,7 @@ function landing() {
                             </div>
                             <div className="col-sm-4">
                                 <div className="box_main_1">
-                                    <div className="zoomout frame"><img src="images/img-7.png"/></div>
+                                    <div className="zoomout frame"><img src="images/img-7.png" /></div>
                                     <div className="padding_15">
                                         <h2 className="speed_text">Speed cycle</h2>
                                         {/* <div className="post_text">Post by : Den <span style="float: right;">20-12-2019</span></div> */}
@@ -260,7 +221,7 @@ function landing() {
                             </div>
                             <div className="col-sm-4">
                                 <div className="box_main_1">
-                                    <div className="zoomout frame"><img src="images/img-8.png"/></div>
+                                    <div className="zoomout frame"><img src="images/img-8.png" /></div>
                                     <div className="padding_15">
                                         <h2 className="speed_text">Jaump cycle</h2>
                                         {/* <div className="post_text">Post by : Den <span style="float: right;">20-12-2019</span></div> */}
@@ -279,13 +240,13 @@ function landing() {
                         <h1 className="request_text">A Call Back</h1>
                         <form action="/action_page.php">
                             <div className="form-group">
-                                <input type="text" className="email-bt" placeholder="Name" name="Name"/>
+                                <input type="text" className="email-bt" placeholder="Name" name="Name" />
                             </div>
                             <div className="form-group">
-                                <input type="text" className="email-bt" placeholder="Email" name="Name"/>
+                                <input type="text" className="email-bt" placeholder="Email" name="Name" />
                             </div>
                             <div className="form-group">
-                                <input type="text" className="email-bt" placeholder="Phone Numbar" name="Email"/>
+                                <input type="text" className="email-bt" placeholder="Phone Numbar" name="Email" />
                             </div>
                             <div className="form-group">
                                 {/* <textarea className="massage-bt" placeholder="Massage" rows="5" id="comment" name="Massage"></textarea> */}
@@ -307,9 +268,9 @@ function landing() {
                             </div>
                         </div>
                         <div className="col-lg-4 col-sm-12">
-                            <div className="call_text"><a href="#"><img src="images/map-icon.png"/><span className="padding_left_0">Page when looking at its layou</span></a></div>
-                            <div className="call_text"><a href="#"><img src="images/call-icon.png"/><span className="padding_left_0">Call Now  +01 123467890</span></a></div>
-                            <div className="call_text"><a href="#"><img src="images/mail-icon.png"/><span className="padding_left_0">demo@gmail.com</span></a></div>
+                            <div className="call_text"><a href="#"><img src="images/map-icon.png" /><span className="padding_left_0">Page when looking at its layou</span></a></div>
+                            <div className="call_text"><a href="#"><img src="images/call-icon.png" /><span className="padding_left_0">Call Now  +01 123467890</span></a></div>
+                            <div className="call_text"><a href="#"><img src="images/mail-icon.png" /><span className="padding_left_0">demo@gmail.com</span></a></div>
                             <div className="social_icon">
                                 <ul>
                                     {/* <li><a href="#"><img src="images/fb-icon1.png"></a></li>
@@ -319,7 +280,7 @@ function landing() {
                                 </ul>
                             </div>
                             {/* <input type="text" className="email_text" placeholder="Enter Your Email" name="Enter Your Email"> */}
-                                <div className="subscribe_bt"><a href="#">Subscribe</a></div>
+                            <div className="subscribe_bt"><a href="#">Subscribe</a></div>
                         </div>
                     </div>
                 </div>
