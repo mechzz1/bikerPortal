@@ -206,6 +206,7 @@ button {
 .header_bg {
     width: 100%;
     float: left;
+    height: 100vh;
 }
 
 .header_section::after {
@@ -330,7 +331,7 @@ button {
     float: left;
     position: relative;
     z-index: 1;
-    padding-top: 30px;
+    padding-top: 1px;
 }
 
 .best_text {
@@ -1121,12 +1122,12 @@ textarea#comment::placeholder {
     margin: 90px 0px;
 }
 
-#navbarSupportedContent{
+/* #navbarSupportedContent{
     transform: translateX(100vw);
-}
+} */
 
-#navbarSupportedContent.nav-normal{
+/* #navbarSupportedContent.nav-normal{
     transform: none;
-}
+} */
 
 /* contact section end*/
