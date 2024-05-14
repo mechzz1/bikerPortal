@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import NavBar from '../../assets/components/navBar/navBar'
 import AppForum from '../../assets/components/appForum/appForum'
 import { Dialog } from 'primereact/dialog';
+import AddForum from '../../assets/forms/addForum/addForum';
 function forums() {
     const [visible, setVisible] = useState(false);
 
@@ -30,13 +31,8 @@ function forums() {
                         <h1>Forum</h1>
                         <button type="submit" className="btn btn-primary" onClick={() => setVisible(true)}>Create New Forum</button>
                         <AppForum />
-                        <Dialog header="Header" visible={visible} style={{ width: '50vw' }} onHide={() => setVisible(false)}>
-                            <p className="m-0">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
+                        <Dialog header="Header" visible={visible}  onHide={() => setVisible(false)}>
+                           <AddForum/>
                         </Dialog>
                     </main>
                 </div>
