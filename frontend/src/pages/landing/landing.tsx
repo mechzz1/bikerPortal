@@ -1,5 +1,6 @@
 import React from 'react'
 import IMAGES from '../../assets/images/images'
+import Slider from '../../assets/components/slider/slider'
 function landing() {
     return (
         <>
@@ -104,7 +105,9 @@ function landing() {
                     </div>
                 </div>
             </div>
-
+            <div className="">
+                <Slider/>
+            </div>
             <div className="cycle_section layout_padding" >
                 <div className="container">
                     <h1 className="cycle_taital">Our cycle</h1>

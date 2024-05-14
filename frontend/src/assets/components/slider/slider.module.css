@@ -1,0 +1,18 @@
+.swipertext{
+    width: 60%;
+    color: var(--textPrimaryColor);
+    line-height: 35px;
+    font-weight: 300;
+    padding-top: 50px;
+  
+  }
+
+  .swiperHeading{
+    color: var(--textPrimaryColor);
+    font-size: 18px;
+  }
+
+  .swiperInnerCon{
+    padding-bottom: 50px;
+    font-size: 16px;
+  }
