@@ -1,5 +1,5 @@
 import React from 'react'
-
+import IMAGES from '../../assets/images/images'
 function landing() {
     return (
         <>
@@ -54,7 +54,7 @@ function landing() {
                                     <div className="row">
                                         <div className="col-md-7">
                                             <div className="best_text">Best</div>
-                                            {/* <div className="image_1"><img src="images/img-1.png"></div> */}
+                                            <div className="image_1"><img src={IMAGES.header3}/></div>
                                         </div>
                                         <div className="col-md-5">
                                             <h1 className="banner_taital">New Model Bike</h1>
@@ -69,7 +69,7 @@ function landing() {
                                     <div className="row">
                                         <div className="col-md-7">
                                             <div className="best_text">Best</div>
-                                            {/* <div className="image_1"><img src="images/img-1.png"></div> */}
+                                            <div className="image_1"><img src={IMAGES.header2}/></div>
                                         </div>
                                         <div className="col-md-5">
                                             <h1 className="banner_taital">New Model Cycle</h1>
@@ -84,7 +84,7 @@ function landing() {
                                     <div className="row">
                                         <div className="col-md-7">
                                             <div className="best_text">Best</div>
-                                            {/* <div className="image_1"><img src="images/img-1.png"></div> */}
+                                            <div className="image_1"><img src={IMAGES.header1}/></div>
                                         </div>
                                         <div className="col-md-5">
                                             <h1 className="banner_taital">New Model Cycle</h1>
