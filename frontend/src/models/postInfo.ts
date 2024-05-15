@@ -3,7 +3,9 @@ interface PostInfo {
   title: string,
   decription: string,
   createdAt: string,
-  User:User
+  User:User,
+  name:string,
+  email:string,
 
 }
 

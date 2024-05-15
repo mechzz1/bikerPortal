@@ -27,6 +27,7 @@ const link = require("../config/url.js");
  */
 const bcrypt = require("bcryptjs");
 const db = require("../models/index.js");
+const { where } = require("sequelize");
 
 
 userController.registerUser = async (req, res) => {
@@ -66,6 +67,25 @@ userController.loginUser = async (req, res) => {
       code: 200,
       message: "User Logged In Successfully",
       token: user,
+
+    });
+  } catch (error) {
+    console.log(error.toString());
+    return res.status(500).send(error.toString());
+  }
+};
+
+userController.getUserInfo = async (req, res) => {
+  try {
+    const user = await userServiceObj.getUser({
+      where:{
+        id:req.userId
+      }
+    });
+    res.status(200).send({
+      code: 200,
+      message: "User Logged In Successfully",
+      data: user,
 
     });
   } catch (error) {

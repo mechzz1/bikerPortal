@@ -44,6 +44,11 @@ router.post(
   // [checkDuplicateEmail.checkDuplicateEmail],
   UserController.registerUser
 );
+router.post(
+  "/getUser",
+  [checkAuth.verifyToken],
+  UserController.getUserInfo
+);
 
 
 
