@@ -6,7 +6,6 @@ function about() {
   return (
     <>
     {/* <Slider/> */}
-    <AppPostCard/>
     </>
   )
 }

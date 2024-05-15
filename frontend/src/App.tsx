@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
-import'./bootstrap.css'
+import './bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Landing from './pages/landing/landing';
@@ -14,6 +14,7 @@ import 'primereact/resources/primereact.min.css'; //core css
 import ForumChat from './pages/forumChat/forumChat';
 import Signup from './pages/signup/signup';
 import SideBar from './assets/components/sildeBar/sideBar';
+import Dashboard from './pages/dashboard/dashboard';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,10 +30,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/sideBar" element={<SideBar />} />
           <Route path="/about" element={<About />} />
-
-
-
-
+          <Route path="/profile" element={<Dashboard />} />
 
 
           {/* <Route element={<PrivateRoutes />}>

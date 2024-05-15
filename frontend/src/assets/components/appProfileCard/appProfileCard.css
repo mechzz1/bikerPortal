@@ -1,10 +1,13 @@
 
-.card1 {
+.card2 {
     width: 350px;
     /* background-color: #efefef; */
     border: none;
     cursor: pointer;
     transition: all 0.5s;
+    background-color: #fff;
+    padding: 20px;
+
 }
 
 .image img {

@@ -1,11 +1,10 @@
 import React from 'react'
 import './appProfileCard.css'
-function appProfilecard1() {
+function appProfilecard2() {
     return (
         <>
-
             <div className=" mb-4 d-flex justify-content-center">
-                <div className="card1">
+                <div className="card2">
                     <div className=" image d-flex flex-column justify-content-center align-items-center">
                         <button className="btnn btnn-secondary"> <img src="https://i.imgur.com/wvxPV9S.png" height="100"
                             width="100" />
@@ -28,4 +27,4 @@ function appProfilecard1() {
     )
 }
 
-export default appProfilecard1
+export default appProfilecard2
