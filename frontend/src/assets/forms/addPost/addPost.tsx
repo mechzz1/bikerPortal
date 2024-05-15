@@ -5,10 +5,11 @@ import { FieldValues, useForm } from 'react-hook-form'
 import axios from 'axios'
 import { zodResolver } from '@hookform/resolvers/zod';
 import styles from './login.module.css'
+import toast from 'react-hot-toast'
 const schema = z.object({
   title: z.string().min(3, { message: "Title required" }),
-  description: z.string().min(3, { message: "Description required" }),
- 
+  decription: z.string().min(3, { message: "Description required" }),
+
 })
 type FormData = z.infer<typeof schema>;
 function addPost() {
@@ -17,30 +18,32 @@ function addPost() {
   const onSubmit = (data: FieldValues) => {
 
     console.log(data);
+    const userData = sessionStorage.getItem('user');
+    let token = null;
+    if (userData !== null) {
+      let temp = JSON.parse(userData);
+      token = temp.token
+    }
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: 'http://localhost:14000/users/login',
+      url: 'http://localhost:13000/posts/add',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'access-token': `${token}`
       },
       data: data
     };
 
-    const fethUsers = async () => {
+    const addPost = async () => {
       try {
         const res = await axios.request(config);
-        const userDataString = JSON.stringify(res.data);
-        sessionStorage.setItem('user', userDataString);
-        // setUser(res.data)
-        // toast.success("Success " + `${res.data.message}`)
-        navigate('/dashboard/main');
+        toast.success("Success " + `${res.data.message}`)
       } catch (error) {
-        // toast.error("Error " + `${error}`)
+        toast.error("Error " + `${error}`)
       }
     }
-
-    fethUsers();
+    addPost();
   };
 
   interface userData {
@@ -57,9 +60,9 @@ function addPost() {
             {errors.title && <p className='text-danger'>{errors.title.message} </p>}
           </div>
           <div className="col-md-8 pt-3">
-            <label htmlFor="description">Description</label>
-            <textarea  className="form-control" id="description" {...register('description')} />
-            {errors.description && <p className='text-danger'>{errors.description.message} </p>}
+            <label htmlFor="decription">Description</label>
+            <textarea className="form-control" id="decription" {...register('decription')} />
+            {errors.decription && <p className='text-danger'>{errors.decription.message} </p>}
           </div>
           <div className="col-md-8 d-flex justify-content-start pt-2">
             <button type="submit" className="btn btn-primary  p-2 pl-5 pr-5">Post</button>
