@@ -15,6 +15,8 @@ import ForumChat from './pages/forumChat/forumChat';
 import Signup from './pages/signup/signup';
 import SideBar from './assets/components/sildeBar/sideBar';
 import Dashboard from './pages/dashboard/dashboard';
+import PrivateRoutes from './utils/privateRoutes';
+import Profile from './pages/profile/profile';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,19 +31,16 @@ function App() {
           <Route path="/forumchat" element={<ForumChat />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/sideBar" element={<SideBar />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/profile" element={<Dashboard />} />
+          {/* <Route path="/about" element={<About />} /> */}
+          {/* <Route path="/profile" element={<Dashboard />} /> */}
 
 
-          {/* <Route element={<PrivateRoutes />}>
-            <Route path="dashboard/*" element={<SideBar />}>
-              <Route index path="main" element={<Home />} />
-              <Route  path="app" element={<AppManagement />} />
-              <Route  path="module" element={<ModuleManagement />} />
-              <Route  path="organizations" element={<Organizations />} />
+          <Route element={<PrivateRoutes />}>
+            <Route path="profile/*" element={<Dashboard />}>
+            <Route path="main" element={<Profile />} />
 
             </Route>
-          </Route> */}
+          </Route>
         </Routes>
 
       </BrowserRouter>

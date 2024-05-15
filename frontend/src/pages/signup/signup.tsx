@@ -21,7 +21,7 @@ function signup() {
         let config = {
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'http://localhost:14000/users/login',
+            url: 'http://localhost:13000/users/register',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -33,9 +33,8 @@ function signup() {
                 const res = await axios.request(config);
                 const userDataString = JSON.stringify(res.data);
                 sessionStorage.setItem('user', userDataString);
-                setUser(res.data)
                 // toast.success("Success " + `${res.data.message}`)
-                navigate('/dashboard/main');
+                navigate('/login');
             } catch (error) {
                 // toast.error("Error " + `${error}`)
             }
@@ -106,6 +105,3 @@ function signup() {
 
 export default signup
 
-function setUser(data: any) {
-    throw new Error('Function not implemented.')
-}
