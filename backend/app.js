@@ -39,11 +39,15 @@ const socket = require("socket.io")(server, {
  */
 const UserRoutes = require("./routes/user.routes");
 const CategoryRoutes = require("./routes/category.routes");
+const PostsRoutes = require("./routes/posts.routes");
+
 
 
 
 app.use("/users", UserRoutes);
 app.use("/category", CategoryRoutes);
+app.use("/posts", PostsRoutes);
+
 
 
 module.exports.notification = function (type, data) {
