@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AppProfileCard from '../appProfileCard/appProfileCard'
+import { Dialog } from 'primereact/dialog';
+import AddPost from '../../forms/addPost/addPost';
 
 function appPostCard() {
+    const [visible, setVisible] = useState(false);
+
     return (
         <>
             <div>
-                <button type="button" className="btn btn-light w-100 mb-2" >Add Post</button>
+                <button type="button" className="btn btn-light w-100 mb-2" onClick={() => setVisible(true)} >Add Post</button>
             </div>
             <div className="feed ">
                 {/* <div className="d-flex flex-row justify-content-between align-items-center p-2 bg-white border">
@@ -39,6 +43,9 @@ function appPostCard() {
                     <div className="d-flex justify-content-end socials p-2 py-3"><i className="fa fa-thumbs-up"></i><i className="fa fa-comments-o"></i><i className="fa fa-share"></i></div>
                 </div>
             </div>
+            <Dialog header="Header" visible={visible} onHide={() => setVisible(false)}>
+                <AddPost />
+            </Dialog>
         </>
     )
 }
