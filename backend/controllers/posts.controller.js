@@ -17,6 +17,27 @@ PostController.add = async (req, res) => {
       }
 };
 
+PostController.getAll = async (req, res) => {
+      try {
+            const post = await PostsService.getAll({
+                  include: {
+                    model: db.User,
+                    attributes: ['name'], // Specify the attributes you want to retrieve from the User model
+                  },
+                  order: [['createdAt', 'DESC']],
+                });
+            res.status(200).send({
+                  code: 200,
+                  message: "Post retrieve Successfully",
+                  data: post,
+            });
+      } catch (error) {
+            console.log("error", error);
+            return res.status(500).send(error);
+      }
+};
+
+
 
 
 module.exports = PostController;

@@ -14,6 +14,12 @@ router.post(
       PostController.add
 );
 
+router.post(
+    "/getAll",
+    [checkAuth.verifyToken],
+    PostController.getAll
+);
+
 
 
 module.exports = router;

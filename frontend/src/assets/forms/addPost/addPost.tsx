@@ -12,7 +12,10 @@ const schema = z.object({
 
 })
 type FormData = z.infer<typeof schema>;
-function addPost() {
+interface ChildProps {
+  onClick: () => void; 
+}
+function addPost({onClick}:ChildProps) {
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>({ resolver: zodResolver(schema) });
   const navigate = useNavigate();
   const onSubmit = (data: FieldValues) => {
@@ -39,6 +42,7 @@ function addPost() {
       try {
         const res = await axios.request(config);
         toast.success("Success " + `${res.data.message}`)
+        onClick();
       } catch (error) {
         toast.error("Error " + `${error}`)
       }
