@@ -5,6 +5,7 @@ import { FieldValues, useForm } from 'react-hook-form'
 import axios from 'axios'
 import { zodResolver } from '@hookform/resolvers/zod';
 import styles from './login.module.css'
+import toast from 'react-hot-toast'
 const schema = z.object({
     userName: z.string().min(3, { message: "User Name is required" }),
     password: z.string().min(3, { message: "Password is required" }),
@@ -33,10 +34,10 @@ function login() {
                 const userDataString = JSON.stringify(res.data);
                 sessionStorage.setItem('user', userDataString);
                 setUser(res.data)
-                // toast.success("Success " + `${res.data.message}`)
+                toast.success("Success " + `${res.data.message}`)
                 navigate('/profile/main');
             } catch (error) {
-                // toast.error("Error " + `${error}`)
+                toast.error("Error " + `${error}`)
             }
         }
 

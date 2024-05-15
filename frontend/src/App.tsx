@@ -17,6 +17,7 @@ import SideBar from './assets/components/sildeBar/sideBar';
 import Dashboard from './pages/dashboard/dashboard';
 import PrivateRoutes from './utils/privateRoutes';
 import Profile from './pages/profile/profile';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -44,6 +45,10 @@ function App() {
         </Routes>
 
       </BrowserRouter>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+      />
     </>
   )
 }
