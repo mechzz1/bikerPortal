@@ -45,23 +45,6 @@ router.post(
   UserController.registerUser
 );
 
-router.post(
-  "/create",
-  [checkAuth.verifyToken],
-  UserController.create
-);
-router.post(
-  "/getUserProjects",
-  [checkAuth.verifyToken],
-  UserController.getUserProjects
-);
-router.get(
-  "/getAllProjects",
-  UserController.getAllProjects
-);
-router.get(
-  "/search",
-  UserController.search
-);
+
 
 module.exports = router;
