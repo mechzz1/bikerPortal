@@ -12,6 +12,7 @@ import Forums from './pages/forums/forums';
 import 'primereact/resources/themes/lara-light-indigo/theme.css'; //theme
 import 'primereact/resources/primereact.min.css'; //core css
 import ForumChat from './pages/forumChat/forumChat';
+import Signup from './pages/signup/signup';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -24,6 +25,8 @@ function App() {
           <Route path="/forum" element={<Forums />} />
           <Route path="/home" element={<Landing />} />
           <Route path="/forumchat" element={<ForumChat />} />
+          <Route path="/signup" element={<Signup />} />
+
 
 
 
