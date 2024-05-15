@@ -43,7 +43,7 @@ function appPostCard() {
                     <div className="d-flex justify-content-end socials p-2 py-3"><i className="fa fa-thumbs-up"></i><i className="fa fa-comments-o"></i><i className="fa fa-share"></i></div>
                 </div>
             </div>
-            <Dialog header="Header" visible={visible} onHide={() => setVisible(false)}>
+            <Dialog header="Add Post" visible={visible} onHide={() => setVisible(false)}>
                 <AddPost />
             </Dialog>
         </>
