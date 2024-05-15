@@ -11,6 +11,7 @@ import Login from './pages/login/login';
 import Forums from './pages/forums/forums';
 import 'primereact/resources/themes/lara-light-indigo/theme.css'; //theme
 import 'primereact/resources/primereact.min.css'; //core css
+import ForumChat from './pages/forumChat/forumChat';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,6 +23,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/forum" element={<Forums />} />
           <Route path="/home" element={<Landing />} />
+          <Route path="/forumchat" element={<ForumChat />} />
+
 
 
           {/* <Route element={<PrivateRoutes />}>

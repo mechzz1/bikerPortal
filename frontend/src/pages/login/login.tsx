@@ -60,17 +60,22 @@ function login() {
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className="row d-flex justify-content-center">
                                 <div className="col-md-12 pt-3">
-                                <label htmlFor="userName">User Name</label>
+                                    <label htmlFor="userName">User Name</label>
 
                                     <input type="text" className="form-control" id="userName" {...register('userName')} />
                                     {errors.userName && <p className='text-danger'>{errors.userName.message} </p>}
                                 </div>
                                 <div className="col-md-12 pt-3">
-                                <label htmlFor="password">Password</label>
+                                    <label htmlFor="password">Password</label>
                                     <input type="password" className="form-control" id="password" {...register('password')} />
 
                                     {errors.password && <p className='text-danger'>{errors.password.message} </p>}
                                 </div>
+                                <p className='text-end m-0  text-secondary' style={{ cursor: "pointer", fontSize: "12px" }}>
+                                    Not register yet? <span className='text-primary'>
+                                        Create an account
+                                    </span>
+                                </p>
                                 <div className="col-md-12 d-flex justify-content-center pt-2">
                                     <button type="submit" className="btn btn-primary w-100 p-2">Submit</button>
                                 </div>
