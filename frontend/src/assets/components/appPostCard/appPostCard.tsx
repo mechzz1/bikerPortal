@@ -4,6 +4,9 @@ import AppProfileCard from '../appProfileCard/appProfileCard'
 function appPostCard() {
     return (
         <>
+            <div>
+                <button type="button" className="btn btn-light w-100 mb-2" >Add Post</button>
+            </div>
             <div className="feed ">
                 {/* <div className="d-flex flex-row justify-content-between align-items-center p-2 bg-white border">
                                 <div className="feed-text px-2">
