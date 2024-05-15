@@ -2,6 +2,7 @@ import React from 'react'
 import AppPostCard from '../../assets/components/appPostCard/appPostCard'
 import AppProfileCard from '../../assets/components/appProfileCard/appProfileCard'
 import AppEventsBar from '../../assets/components/appEventsBar/appEventsBar'
+import styles from './profile.module.css'
 function profile() {
     return (
         <>
@@ -14,9 +15,9 @@ function profile() {
                         <AppPostCard />
 
                     </div>
-                    {/* <div className={`col-md-3  ${styles.eventCardBg}`}>
+                    <div className={`col-md-3  ${styles.eventCardBg}`}>
                         <AppEventsBar />
-                    </div> */}
+                    </div>
                 </div>
             </div>
         </>
