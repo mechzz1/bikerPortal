@@ -5,6 +5,7 @@ import { FieldValues, useForm } from 'react-hook-form'
 import axios from 'axios'
 import { zodResolver } from '@hookform/resolvers/zod';
 import styles from './login.module.css'
+import toast from 'react-hot-toast'
 const schema = z.object({
     topic: z.string().min(3, { message: "Topicis required" }),
     name: z.string().min(3, { message: "Name required" }),
@@ -12,36 +13,42 @@ const schema = z.object({
     password: z.string().min(3, { message: "Password is required" }),
 })
 type FormData = z.infer<typeof schema>;
-function addForum() {
+interface ChildProps {
+    onClick: () => void;
+}
+function addForum({ onClick }: ChildProps) {
     const { register, handleSubmit, formState: { errors } } = useForm<FormData>({ resolver: zodResolver(schema) });
     const navigate = useNavigate();
     const onSubmit = (data: FieldValues) => {
 
         console.log(data);
+        const userData = sessionStorage.getItem('user');
+        let token = null;
+        if (userData !== null) {
+            let temp = JSON.parse(userData);
+            token = temp.token
+        }
         let config = {
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'http://localhost:14000/users/login',
+            url: 'http://localhost:13000/events/add',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'access-token': `${token}`
             },
             data: data
         };
 
-        const fethUsers = async () => {
+        const addPost = async () => {
             try {
                 const res = await axios.request(config);
-                const userDataString = JSON.stringify(res.data);
-                sessionStorage.setItem('user', userDataString);
-                // setUser(res.data)
-                // toast.success("Success " + `${res.data.message}`)
-                navigate('/dashboard/main');
+                toast.success("Success " + `${res.data.message}`)
+                onClick();
             } catch (error) {
-                // toast.error("Error " + `${error}`)
+                toast.error("Error " + `${error}`)
             }
         }
-
-        fethUsers();
+        addPost();
     };
 
     interface userData {
@@ -67,7 +74,7 @@ function addForum() {
                         <input type="text" className="form-control" id="question" {...register('question')} />
                         {errors.question && <p className='text-danger'>{errors.question.message} </p>}
                     </div>
-                
+
                     <div className="col-md-12 d-flex justify-content-end pt-2">
                         <button type="submit" className="btn btn-primary  p-2">Submit</button>
                     </div>

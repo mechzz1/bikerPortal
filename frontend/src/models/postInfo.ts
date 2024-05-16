@@ -2,6 +2,8 @@ interface PostInfo {
   id: number
   title: string,
   decription: string,
+  description: string,
+
   createdAt: string,
   User:User,
   name:string,
