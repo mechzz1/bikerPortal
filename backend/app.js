@@ -40,6 +40,8 @@ const socket = require("socket.io")(server, {
 const UserRoutes = require("./routes/user.routes");
 const CategoryRoutes = require("./routes/category.routes");
 const PostsRoutes = require("./routes/posts.routes");
+const EventsRoutes = require("./routes/events.routes");
+
 
 
 
@@ -47,6 +49,8 @@ const PostsRoutes = require("./routes/posts.routes");
 app.use("/users", UserRoutes);
 app.use("/category", CategoryRoutes);
 app.use("/posts", PostsRoutes);
+app.use("/events", EventsRoutes);
+
 
 
 
