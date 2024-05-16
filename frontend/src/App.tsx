@@ -27,17 +27,17 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="/forum" element={<Forums />} />
           <Route path="/home" element={<Landing />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/sideBar" element={<SideBar />} />
           {/* <Route path="/about" element={<About />} /> */}
           {/* <Route path="/profile" element={<Dashboard />} /> */}
 
-          <Route path="/forumchat/:id" element={<ForumChat />} />
           <Route element={<PrivateRoutes />}>
             <Route path="profile/*" element={<Dashboard />}>
               <Route path="main" element={<Profile />} />
+              <Route path="forum" element={<Forums />} />
+              <Route path="forumchat/:id" element={<ForumChat />} />
 
             </Route>
           </Route>
