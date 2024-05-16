@@ -95,7 +95,7 @@ function appEventsBar() {
                     )
                 }
             </div>
-            <Dialog header="Add Post" visible={visible} onHide={() => setVisible(false)}>
+            <Dialog header="Add Event" visible={visible} onHide={() => setVisible(false)}>
                 <AddEvent onClick={handleClick} />
             </Dialog>
         </>
