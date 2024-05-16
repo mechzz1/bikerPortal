@@ -615,3 +615,29 @@ height: 110%;
 
 
 }
+
+
+/* For WebKit-based browsers (such as Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 5px; /* Set the width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Set the color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Set the color of the scrollbar thumb */
+}
+
+/* For Firefox */
+/* You can use 'scrollbar-width: thin;' but it's not supported in all browsers yet */
+/* So, we use 'width: 5px;' as an alternative */
+/* You may need to use a more specific selector for Firefox */
+* {
+  scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+}

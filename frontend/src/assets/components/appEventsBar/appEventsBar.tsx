@@ -68,17 +68,20 @@ function appEventsBar() {
     }, []);
     return (
         <>
-            <div className="feed p-2 ">
-                <div className='d-flex justify-content-between'>
-                    <h5 className='align-items-center'>
-                        Upcomming Events
-                    </h5>
-                    <button type="button" className="btn btn-light" onClick={() => setVisible(true)}>Add</button>
-                </div>
+            <div className='d-flex justify-content-between pt-2'>
+                <h5 className='align-items-center'>
+                    Upcomming Events
+                </h5>
+                <button type="button" className="btn btn-light" onClick={() => setVisible(true)}>Add</button>
+            </div>
+            <p className='mb-0'>
+                view All
+            </p>
+            <div className="feed p-2 pb-5" style={{ overflow: "auto", height: "100%" }}>
                 {
                     data.slice(0, 3).map((item, index) =>
                         <div className="card p-2 mt-2" style={{ width: "18rem;" }} key={index}>
-                            <img src={ images.length > 0 && images[index]?.urls?.regular ? images[index].urls.regular : ''} className="card-img-top" alt="..." width={80} height={50} />
+                            <img src={images.length > 0 && images[index]?.urls?.regular ? images[index].urls.regular : ''} className="card-img-top" alt="..." width={80} height={50} />
                             <hr />
                             <div className="card-body">
                                 <h5>

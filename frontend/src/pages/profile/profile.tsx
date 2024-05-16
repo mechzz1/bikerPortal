@@ -11,7 +11,7 @@ function profile() {
                     <div className="col-md-3">
                         <AppProfileCard />
                     </div>
-                    <div className="col-md-5 ">
+                    <div className={`col-md-5 ${styles.postCard}`}>
                         <AppPostCard />
 
                     </div>

@@ -1,4 +1,10 @@
 .eventCardBg{
     background-color: #fff;
+    max-height: 90vh;
+    overflow-y: hidden;;
+}
 
+.postCard{
+    max-height: 120vh;
+    overflow-y: hidden;;
 }

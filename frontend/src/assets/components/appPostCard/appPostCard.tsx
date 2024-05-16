@@ -47,7 +47,7 @@ function appPostCard() {
             <div>
                 <button type="button" className="btn btn-light w-100 mb-2" onClick={() => setVisible(true)} >Add Post</button>
             </div>
-            <div className="feed ">
+            <div className="feed " style={{overflow: "auto", height:"100%"}}>
             
                 {
                     data.map((item, index) => 
