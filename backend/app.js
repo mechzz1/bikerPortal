@@ -41,6 +41,8 @@ const UserRoutes = require("./routes/user.routes");
 const CategoryRoutes = require("./routes/category.routes");
 const PostsRoutes = require("./routes/posts.routes");
 const EventsRoutes = require("./routes/events.routes");
+const ForumRoutes = require("./routes/forums.routes");
+
 
 
 
@@ -50,6 +52,8 @@ app.use("/users", UserRoutes);
 app.use("/category", CategoryRoutes);
 app.use("/posts", PostsRoutes);
 app.use("/events", EventsRoutes);
+app.use("/forum", ForumRoutes);
+
 
 
 

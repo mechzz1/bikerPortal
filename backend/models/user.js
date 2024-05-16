@@ -29,6 +29,9 @@ module.exports = (sequelize, DataTypes) => {
       User.hasMany(models.Events, {
         foreignKey: "userId",
       });
+      User.hasMany(models.Forum, {
+        foreignKey: "userId",
+      });
     }
   }
   /**
