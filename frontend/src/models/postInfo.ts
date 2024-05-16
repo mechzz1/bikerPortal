@@ -8,6 +8,9 @@ interface PostInfo {
   User:User,
   name:string,
   email:string,
+  topic:string,
+  question:string,
+
 
 }
 

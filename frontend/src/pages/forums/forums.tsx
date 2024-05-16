@@ -1,11 +1,49 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import NavBar from '../../assets/components/navBar/navBar'
 import AppForum from '../../assets/components/appForum/appForum'
 import { Dialog } from 'primereact/dialog';
 import AddForum from '../../assets/forms/addForum/addForum';
+import axios from 'axios';
+import toast from 'react-hot-toast';
+import PostInfo from '../../models/postInfo';
 function forums() {
     const [visible, setVisible] = useState(false);
+    const [data, setData] = useState<PostInfo[]>([]);
+    const handleClick = () => {
+        setVisible(false)
+    };
 
+    const userData = sessionStorage.getItem('user');
+    let token = null;
+    if (userData !== null) {
+        let temp = JSON.parse(userData);
+        token = temp.token
+    }
+    let config = {
+        method: 'post',
+        maxBodyLength: Infinity,
+        url: 'http://localhost:13000/forum/getAll',
+        headers: {
+            'Content-Type': 'application/json',
+            'access-token': `${token}`
+        },
+    };
+    const getAllPosts = async () => {
+        try {
+            const res = await axios.request(config);
+            console.log(res.data.data);
+            setData(res.data.data);
+        } catch (error) {
+            toast.error("Error " + `${error}`)
+        }
+    }
+  
+
+    useEffect(() => {
+        getAllPosts();
+        // fetchRandomImage();
+
+    }, []);
     return (
         <>
             <NavBar type="basic" />
@@ -16,23 +54,15 @@ function forums() {
                             <li className="nav-item">
                                 <a className="nav-link active" href="#">Overview <span className="sr-only">(current)</span></a>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Reports</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Analytics</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Export</a>
-                            </li>
+                        
                         </ul>
                     </nav>
                     <main role="main" className="col-sm-9 ml-sm-auto col-md-10 pt-3 main">
                         <h1>Forum</h1>
                         <button type="submit" className="btn btn-primary" onClick={() => setVisible(true)}>Create New Forum</button>
-                        <AppForum />
+                        <AppForum data={data} />
                         <Dialog header="Header" visible={visible}  onHide={() => setVisible(false)}>
-                           <AddForum/>
+                           <AddForum onClick={handleClick}/>
                         </Dialog>
                     </main>
                 </div>

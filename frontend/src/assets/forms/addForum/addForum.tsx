@@ -10,7 +10,6 @@ const schema = z.object({
     topic: z.string().min(3, { message: "Topicis required" }),
     name: z.string().min(3, { message: "Name required" }),
     question: z.string().min(3, { message: "Question is required" }),
-    password: z.string().min(3, { message: "Password is required" }),
 })
 type FormData = z.infer<typeof schema>;
 interface ChildProps {
@@ -21,7 +20,6 @@ function addForum({ onClick }: ChildProps) {
     const navigate = useNavigate();
     const onSubmit = (data: FieldValues) => {
 
-        console.log(data);
         const userData = sessionStorage.getItem('user');
         let token = null;
         if (userData !== null) {
@@ -31,7 +29,7 @@ function addForum({ onClick }: ChildProps) {
         let config = {
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'http://localhost:13000/events/add',
+            url: 'http://localhost:13000/forum/add',
             headers: {
                 'Content-Type': 'application/json',
                 'access-token': `${token}`
