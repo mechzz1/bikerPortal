@@ -1,13 +1,15 @@
 import React from 'react'
 import IMAGES from '../../../assets/images/images'
-interface propes{
-    type?:string;
+interface propes {
+    type?: string;
 }
-function navBar({type}:propes) {
+import { Link, Outlet, useLocation } from 'react-router-dom';
+
+function navBar({ type }: propes) {
     return (
         <>
-      
-            <nav className={` navbar navbar-expand-lg navbar-light ${type ? `bg-light`: ''}`} style={{ backgroundColor: "transparent !important" }}>
+
+            <nav className={` navbar navbar-expand-lg navbar-light ${type ? `bg-light` : ''}`} style={{ backgroundColor: "transparent !important" }}>
                 <a href="index.html" className="logo"><img src={IMAGES.logo} /></a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -15,28 +17,27 @@ function navBar({type}:propes) {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item active">
-                            <a className="nav-link" href="index.html">Home</a>
+                            <a className="nav-link" href="#">Home</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="about.html">About</a>
+                            <a className="nav-link" href="#about">About</a>
+                        </li>
+
+                        <li className="nav-item">
+                            <a className="nav-link" href="#shop">Shop</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="cycle.html">Our Cycle</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="shop.html">Shop</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="news.html">News</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="contact.html">Contact Us</a>
+                            <a className="nav-link" href="#events">Events</a>
                         </li>
                     </ul>
                     <form className="form-inline my-2 my-lg-0">
                         <div className="login_menu">
                             <ul>
-                                <li><a href="#">Login</a></li>
+                                <li>
+                                    <Link to="/login">
+                                        login
+                                    </Link>
+                                </li>
                                 {/* <li><a href="#"><img src="images/trolly-icon.png"></a></li>
                                     <li><a href="#"><img src="images/search-icon.png"></a></li> */}
                             </ul>
