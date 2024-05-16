@@ -24,7 +24,7 @@ function forumChat() {
     const [chats, setChats] = useState<any[]>([]);
 
 
-    let token = null;
+    let token:any = null;
     if (userData !== null) {
         let temp = JSON.parse(userData);
         token = temp.token
