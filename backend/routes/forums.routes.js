@@ -25,6 +25,16 @@ router.post(
     [checkAuth.verifyToken],
     ForumController.get
 );
+router.post(
+    "/addComment",
+    [checkAuth.verifyToken],
+    ForumController.addComment
+);
+router.post(
+    "/getAllChats",
+    [checkAuth.verifyToken],
+    ForumController.getAllChats
+);
 
 
 

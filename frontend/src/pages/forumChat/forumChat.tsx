@@ -7,14 +7,22 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import PostInfo from '../../models/postInfo';
 import dateFormat from 'dateformat';
+import AddComment from '../../assets/forms/addComment/addComment';
 function forumChat() {
     const id = {
         id: useParams()
+    }
+    const handleClick = () => {
+        getAllPosts();
+        getAllChats();
+
     }
     console.log(id);
     const userData = sessionStorage.getItem('user');
     const [data, setData] = useState<PostInfo[]>([]);
     const [singleData, setSingleData] = useState<any>();
+    const [chats, setChats] = useState<any[]>([]);
+
 
     let token = null;
     if (userData !== null) {
@@ -37,17 +45,37 @@ function forumChat() {
             const res = await axios.request(config);
             console.log(res.data.data);
             setData([res.data.data]);
-
+            setSingleData(res.data.data)
         } catch (error) {
             toast.error("Error " + `${error}`)
         }
     }
 
+    const getAllChats = async () => {
+        let config = {
+            method: 'post',
+            maxBodyLength: Infinity,
+            url: 'http://localhost:13000/forum/getAllChats',
+            headers: {
+                'Content-Type': 'application/json',
+                'access-token': `${token}`
+            },
+            data: id
+        };
+        try {
+            const res = await axios.request(config);
+            console.log(res.data.data);
+            setChats(res.data.data);
+            // setSingleData(res.data.data)
+        } catch (error) {
+            toast.error("Error " + `${error}`)
+        }
+    }
     useEffect(() => {
         // Fetch data based on the ID
         getAllPosts();
+        getAllChats();
     }, []);
-    console.log(typeof data, "data");
     return (
         <>
             <NavBar type="basic" />
@@ -77,14 +105,24 @@ function forumChat() {
                             }
                         </div>
                         <div className="coment-bottom bg-white p-2 px-4">
-                            <div className="d-flex flex-row add-comment-section mt-4 mb-4"><img className="img-fluid img-responsive rounded-circle mr-2" src="https://i.imgur.com/qdiP4DB.jpg" width="38" /><input type="text" className="form-control mr-3" placeholder="Add comment" /><button className="btn btn-primary" type="button">Comment</button></div>
-                            <div
-                                className="commented-section mt-2">
-                                <div className="d-flex flex-row align-items-center commented-user">
-                                    <h5 className="mr-2">Corey oates</h5><span className="dot mb-1"></span><span className="mb-1 ml-2">4 hours ago</span></div>
-                                <div className="comment-text-sm"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>
+                            <AddComment onClick={handleClick} />
+                            {
+                                chats.map((chat, index) =>
+                                    <div
+                                        className="commented-section mt-2" key={index}>
+                                        <div className="d-flex flex-row align-items-center commented-user">
+                                            <img className="img-fluid img-responsive rounded-circle mr-2" src="https://i.imgur.com/qdiP4DB.jpg" width="38" />
+                                            <h5 className="mr-2 align-items-center ">Testing User</h5>
+                                        </div>
+                                        <div className="comment-text-sm"><span>
+                                            {chat.comment}
+                                        </span></div>
 
-                            </div>
+                                    </div>
+
+                                )
+                            }
+
                             <div className="d-flex flex-row align-items-center text-left comment-top p-2 bg-white border-bottom px-4">
                             </div>
                         </div>
