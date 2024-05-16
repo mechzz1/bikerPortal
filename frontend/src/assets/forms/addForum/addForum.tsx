@@ -29,7 +29,7 @@ function addForum({ onClick }: ChildProps) {
         let config = {
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'http://localhost:13000/forum/add',
+            url: 'http://bike.syncstaging.com/forum/add',
             headers: {
                 'Content-Type': 'application/json',
                 'access-token': `${token}`

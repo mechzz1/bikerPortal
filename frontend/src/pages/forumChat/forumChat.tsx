@@ -32,7 +32,7 @@ function forumChat() {
     let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'http://localhost:13000/forum/get',
+        url: 'http://bike.syncstaging.com/forum/get',
         headers: {
             'Content-Type': 'application/json',
             'access-token': `${token}`
@@ -55,7 +55,7 @@ function forumChat() {
         let config = {
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'http://localhost:13000/forum/getAllChats',
+            url: 'http://bike.syncstaging.com/forum/getAllChats',
             headers: {
                 'Content-Type': 'application/json',
                 'access-token': `${token}`

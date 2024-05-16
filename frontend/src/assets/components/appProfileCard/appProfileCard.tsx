@@ -16,7 +16,7 @@ function appProfilecard2() {
     let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'http://localhost:13000/users/getUser',
+        url: 'http://bike.syncstaging.com/users/getUser',
         headers: {
             'Content-Type': 'application/json',
             'access-token': `${token}`

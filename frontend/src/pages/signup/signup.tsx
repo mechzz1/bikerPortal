@@ -21,7 +21,7 @@ function signup() {
         let config = {
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'http://localhost:13000/users/register',
+            url: 'http://bike.syncstaging.com/users/register',
             headers: {
                 'Content-Type': 'application/json'
             },

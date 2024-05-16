@@ -36,7 +36,7 @@ function appEventsBar() {
     let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'http://localhost:13000/events/getAll',
+        url: 'http://bike.syncstaging.com/events/getAll',
         headers: {
             'Content-Type': 'application/json',
             'access-token': `${token}`

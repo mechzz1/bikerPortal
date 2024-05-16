@@ -31,7 +31,7 @@ function addComment({ onClick }: ChildProps) {
         let config = {
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'http://localhost:13000/forum/addComment',
+            url: 'http://bike.syncstaging.com/forum/addComment',
             headers: {
                 'Content-Type': 'application/json',
                 'access-token': `${token}`

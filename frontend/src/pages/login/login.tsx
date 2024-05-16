@@ -21,7 +21,7 @@ function login() {
         let config = {
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'http://localhost:13000/users/login',
+            url: 'http://bike.syncstaging.com/users/login',
             headers: {
                 'Content-Type': 'application/json'
             },

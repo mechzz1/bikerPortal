@@ -24,7 +24,7 @@ function appPostCard() {
     let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'http://localhost:13000/posts/getAll',
+        url: 'http://bike.syncstaging.com/posts/getAll',
         headers: {
             'Content-Type': 'application/json',
             'access-token': `${token}`

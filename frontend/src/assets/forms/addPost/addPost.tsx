@@ -30,7 +30,7 @@ function addPost({onClick}:ChildProps) {
     let config = {
       method: 'post',
       maxBodyLength: Infinity,
-      url: 'http://localhost:13000/posts/add',
+      url: 'http://bike.syncstaging.com/posts/add',
       headers: {
         'Content-Type': 'application/json',
         'access-token': `${token}`

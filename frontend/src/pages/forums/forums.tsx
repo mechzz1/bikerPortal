@@ -24,7 +24,7 @@ function forums() {
     let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'http://localhost:13000/forum/getAll',
+        url: 'http://bike.syncstaging.com/forum/getAll',
         headers: {
             'Content-Type': 'application/json',
             'access-token': `${token}`
