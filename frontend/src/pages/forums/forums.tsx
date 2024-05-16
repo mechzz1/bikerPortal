@@ -11,6 +11,8 @@ function forums() {
     const [data, setData] = useState<PostInfo[]>([]);
     const handleClick = () => {
         setVisible(false)
+        getAllPosts();
+
     };
 
     const userData = sessionStorage.getItem('user');

@@ -29,16 +29,15 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/forum" element={<Forums />} />
           <Route path="/home" element={<Landing />} />
-          <Route path="/forumchat" element={<ForumChat />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/sideBar" element={<SideBar />} />
           {/* <Route path="/about" element={<About />} /> */}
           {/* <Route path="/profile" element={<Dashboard />} /> */}
 
-
+          <Route path="/forumchat/:id" element={<ForumChat />} />
           <Route element={<PrivateRoutes />}>
             <Route path="profile/*" element={<Dashboard />}>
-            <Route path="main" element={<Profile />} />
+              <Route path="main" element={<Profile />} />
 
             </Route>
           </Route>

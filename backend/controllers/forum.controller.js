@@ -1,6 +1,7 @@
 const ForumController = {};
 const ForumService = require("../services/forum.service.js");
 const db = require('../models/index.js');
+const { where } = require("sequelize");
 
 ForumController.add = async (req, res) => {
       try {
@@ -25,6 +26,24 @@ ForumController.getAll = async (req, res) => {
                     attributes: ['name'], // Specify the attributes you want to retrieve from the User model
                   },
                   order: [['createdAt', 'DESC']],
+                });
+            res.status(200).send({
+                  code: 200,
+                  message: "Post retrieve Successfully",
+                  data: post,
+            });
+      } catch (error) {
+            console.log("error", error);
+            return res.status(500).send(error);
+      }
+};
+
+ForumController.get = async (req, res) => {
+      try {
+            const post = await ForumService.getOne({
+                 where:{
+                  id:req.body.id.id
+                 }
                 });
             res.status(200).send({
                   code: 200,

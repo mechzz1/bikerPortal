@@ -20,6 +20,12 @@ router.post(
     ForumController.getAll
 );
 
+router.post(
+    "/get",
+    [checkAuth.verifyToken],
+    ForumController.get
+);
+
 
 
 module.exports = router;
