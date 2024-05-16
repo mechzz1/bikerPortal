@@ -53,7 +53,7 @@ function appEventsBar() {
     }
     const fetchRandomImage = async () => {
         try {
-            const response = await axios.get('https://api.unsplash.com/photos/random?query=motorbike&count=2&client_id=NxmUpGF6RlPuxf4KdKFQdLQ8yOlbvsq5dYo-sMSPUHk&w=200&h=200&fit=crop');
+            const response = await axios.get('https://api.unsplash.com/photos/random?query=motorbike&count=4&client_id=NxmUpGF6RlPuxf4KdKFQdLQ8yOlbvsq5dYo-sMSPUHk&w=200&h=200&fit=crop');
             setImages(response.data);
             console.log(response.data, " asdsd");
         } catch (error) {
@@ -63,7 +63,7 @@ function appEventsBar() {
 
     useEffect(() => {
         getAllPosts();
-        // fetchRandomImage();
+        fetchRandomImage();
 
     }, []);
     return (

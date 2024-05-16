@@ -12,7 +12,7 @@ function appForum({ data }: props) {
         <>
             {
                 data.map((item, index) =>
-                    <Link to={`/forumchat/${item.id}`}>
+                    <Link to={`/profile/forumchat/${item.id}`}>
                         <div className="card1 bg-light" key={index}>
                             <div className="username pb-2">Topic: {item.topic}</div>
 

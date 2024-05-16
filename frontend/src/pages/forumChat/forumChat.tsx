@@ -78,7 +78,6 @@ function forumChat() {
     }, []);
     return (
         <>
-            <NavBar type="basic" />
             <div className="container mt-5 mb-5">
                 <div className="d-flex justify-content-center row">
                     <div className="d-flex flex-column col-md-8">
