@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { z } from 'zod'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FieldValues, useForm } from 'react-hook-form'
 import axios from 'axios'
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -73,11 +73,14 @@ function login() {
 
                                     {errors.password && <p className='text-danger'>{errors.password.message} </p>}
                                 </div>
-                                <p className='text-end m-0  text-secondary' style={{ cursor: "pointer", fontSize: "12px" }}>
-                                    Not register yet? <span className='text-primary'>
-                                        Create an account
-                                    </span>
-                                </p>
+                                <Link to="/signup">
+
+                                    <p className='text-end m-0  text-secondary' style={{ cursor: "pointer", fontSize: "12px" }}>
+                                        Not register yet? <span className='text-primary'>
+                                            Create an account
+                                        </span>
+                                    </p>
+                                </Link >
                                 <div className="col-md-12 d-flex justify-content-center pt-2">
                                     <button type="submit" className="btn btn-primary w-100 p-2">Submit</button>
                                 </div>

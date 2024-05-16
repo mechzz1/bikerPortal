@@ -37,7 +37,7 @@ function navBar({ type }: propes) {
                                 <div className="login_menu">
                                     <ul>
                                         <li>
-                                         
+
                                         </li>
                                         {/* <li><a href="#"><img src="images/trolly-icon.png"></a></li>
                             <li><a href="#"><img src="images/search-icon.png"></a></li> */}
@@ -68,6 +68,13 @@ function navBar({ type }: propes) {
                                 </li>
                                 <li className="nav-item">
                                     <a className="nav-link" href="#events">Events</a>
+                                </li>
+                                <li className="nav-item">
+                                    <Link to="/signup">
+                                        <a className="nav-link" href="#">
+                                            Join Community
+                                        </a>
+                                    </Link>
                                 </li>
                             </ul>
                             <form className="form-inline my-2 my-lg-0">
