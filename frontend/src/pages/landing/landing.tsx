@@ -21,7 +21,7 @@ function landing() {
         };
 
         try {
-            const response = await axios.post('http://localhost:13000/orders/addOrder', data);
+            const response = await axios.post('http://bike.syncstaging.com/orders/addOrder', data);
 
             if (response.status !== 200) {
                 throw new Error('Network response was not ok');
