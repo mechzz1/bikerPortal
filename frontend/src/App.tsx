@@ -18,6 +18,8 @@ import Dashboard from './pages/dashboard/dashboard';
 import PrivateRoutes from './utils/privateRoutes';
 import Profile from './pages/profile/profile';
 import { Toaster } from 'react-hot-toast';
+import Success from './pages/success/success';
+import Fail from './pages/fail/fail';
 function App() {
   const [count, setCount] = useState(0)
 
@@ -29,6 +31,10 @@ function App() {
           <Route path="/home" element={<Landing />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/sideBar" element={<SideBar />} />
+          <Route path="/success" element={<Success />} />
+          <Route path="/fail" element={<Fail />} />
+
+
           <Route path="/" element={<Navigate to="/home" />} />
           {/* <Route path="/about" element={<About />} /> */}
           {/* <Route path="/profile" element={<Dashboard />} /> */}

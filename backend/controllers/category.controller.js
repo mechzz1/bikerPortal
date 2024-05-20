@@ -48,8 +48,8 @@ CategoryController.addOrder = async (req, res) => {
                               allowed_countries: ['US', 'CA'],
                             },
                         // customer_email:`${req.body.email}`,
-                        success_url: "http://localhost:5173/home",
-                        cancel_url: "http://localhost:5173/home",
+                        success_url: "http://bikeportal.syncstaging.com/success",
+                        cancel_url: "http://bikeportal.syncstaging.com/fail",
                       }
                       
                       );
