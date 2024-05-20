@@ -4,14 +4,27 @@ interface propes {
     type?: string;
 }
 import { Link, Outlet, useLocation } from 'react-router-dom';
-
+import { RiMotorbikeFill } from "react-icons/ri";
 function navBar({ type }: propes) {
     return (
         <>
             {
                 type == "basic" ?
                     <nav className={` navbar navbar-expand-lg navbar-light ${type ? `bg-light` : ''}`} style={{ backgroundColor: "transparent !important" }}>
-                        <a href="index.html" className="logo"><img src={IMAGES.logo} /></a>
+                           <a href="" className="logo" style={{}}>
+                            <span style={{ fontSize: "24px", fontWeight: "700", color: "#274D5A" }} className='pr-1'>
+                                Classic
+                            </span>
+                            <span  style={{ fontSize: "24px", fontWeight: "700", color: "#F7C17B" }} >
+
+                                Rider
+                            </span>
+                            <RiMotorbikeFill 
+                            className='mb-2 ml-1'
+                            size={24}
+                            color='#274D5A'
+                            />
+                        </a>
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
@@ -50,7 +63,20 @@ function navBar({ type }: propes) {
                             {/* <span style="font-size:36px;cursor:pointer; color: #fff" onclick="openNav()"><img src="images/toggle-icon.png" style="height: 30px;"></span> */}
                         </div>
                     </nav> : <nav className={` navbar navbar-expand-lg navbar-light ${type ? `bg-light` : ''}`} style={{ backgroundColor: "transparent !important" }}>
-                        <a href="index.html" className="logo"><img src={IMAGES.logo} /></a>
+                        <a href="" className="logo" style={{}}>
+                            <span style={{ fontSize: "24px", fontWeight: "700", color: "#274D5A" }} className='pr-1'>
+                                Classic
+                            </span>
+                            <span  style={{ fontSize: "24px", fontWeight: "700", color: "#F7C17B" }} >
+
+                                Rider
+                            </span>
+                            <RiMotorbikeFill 
+                            className='mb-2 ml-1'
+                            size={24}
+                            color='#274D5A'
+                            />
+                        </a>
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>

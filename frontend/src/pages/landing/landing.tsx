@@ -46,7 +46,7 @@ function landing() {
                                             <div className="image_1"><img src={IMAGES.header2} /></div>
                                         </div>
                                         <div className="col-md-5">
-                                            <h1 className="banner_taital">New Model Cycle</h1>
+                                            <h1 className="banner_taital">New Model Bike</h1>
                                             <p className="banner_text">It is a long established fact that a reader will be
                                                 distracted by the readable content </p>
                                             <div className="contact_bt"><a href="#shop">Shop Now</a></div>
@@ -62,7 +62,7 @@ function landing() {
                                             <div className="image_1"><img src={IMAGES.header1} /></div>
                                         </div>
                                         <div className="col-md-5">
-                                            <h1 className="banner_taital">New Model Cycle</h1>
+                                            <h1 className="banner_taital">New Model Bikes</h1>
                                             <p className="banner_text">It is a long established fact that a reader will be
                                                 distracted by the readable content </p>
                                             <div className="contact_bt"><a href="#shop">Shop Now</a></div>
@@ -86,7 +86,7 @@ function landing() {
             </div>
             <div className="cycle_section layout_padding" id="shop">
                 <div className="container">
-                    <h1 className="cycle_taital">Our cycle</h1>
+                    <h1 className="cycle_taital">Our Bikes</h1>
                     <p className="cycle_text">It is a long established fact that a reader will be distracted by the </p>
                     <div className="cycle_section_2 layout_padding">
                         <div className="row">
@@ -97,7 +97,7 @@ function landing() {
                                 </div>
                             </div>
                             <div className="col-md-6">
-                                <h1 className="cycles_text">Cycles</h1>
+                                <h1 className="cycles_text">Cruiser Bikes</h1>
                                 <p className="lorem_text">It is a long established fact that a reader will be distracted by the
                                     readable content of a page when looking at its layout. The point of using Lorem Ipsum is
                                     that it has a more-or-less normal distribution of letters</p>
@@ -116,7 +116,7 @@ function landing() {
                     <div className="cycle_section_3 layout_padding">
                         <div className="row">
                             <div className="col-md-6">
-                                <h1 className="cycles_text">Stylis Cycle</h1>
+                                <h1 className="cycles_text">Trail Bikes</h1>
                                 <p className="lorem_text">It is a long established fact that a reader will be distracted by the
                                     readable content of a page when looking at its layout. The point of using Lorem Ipsum is
                                     that it has a more-or-less normal distribution of letters</p>
@@ -148,7 +148,7 @@ function landing() {
 
             <div className="about_section layout_padding" id="about">
                 <div className="container">
-                    <h1 className="about_taital">About Our cycle Store</h1>
+                    <h1 className="about_taital">About Our Bike Store</h1>
                     <p className="about_text">It is a long established fact that a reader will be distracted by the readable
                         content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
                         more-or-less normal distribution of letters
