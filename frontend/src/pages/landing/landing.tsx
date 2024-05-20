@@ -9,8 +9,39 @@ import { CiLocationOn } from "react-icons/ci";
 import { CiPhone } from "react-icons/ci";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function landing() {
+    const order = async (price: number, name: string, id: number, description: string) => {
+        let data = {
+            price: price,
+            name: name,
+            id: id,
+            description: description
+        };
+
+        try {
+            const response = await axios.post('http://localhost:13000/orders/addOrder', data);
+
+            if (response.status !== 200) {
+                throw new Error('Network response was not ok');
+            }
+
+            const responseData = response.data;
+
+            if (responseData.url) {
+                window.location.href = `${responseData.url}`;
+            }
+            // Handle success - Maybe show a success message or redirect the user
+        } catch (error) {
+            // Handle errors - Display an error message or perform necessary actions
+            console.error('There was an error!', error);
+        }
+
+    }
+    const handleClick = (price: number, name: string, id: number, description: string) => {
+        order(price, name, id, description); // Replace with actual values or make it dynamic
+    };
     return (
         <>
             <div className="header_section header_bg">
@@ -102,13 +133,13 @@ function landing() {
                                     readable content of a page when looking at its layout. The point of using Lorem Ipsum is
                                     that it has a more-or-less normal distribution of letters</p>
                                 <div className="btn_main">
-                                    <div className="buy_bt">
-                                        <Link to="/login">
-                                            Buy Now
-                                        </Link>
+                                    <div className="buy_bt" onClick={() => handleClick(90000, "Cruiser Bikes", 1,
+                                        "Designed for speed and performance on paved roads, these bikes feature lightweight frames, narrow tires, and drop handlebars for aerodynamic riding."
+                                    )} >
+                                        <a href="#">Buy Now</a>
                                     </div>
                                     <h4 className="price_text">Price <span style={{ color: "#f7c17b" }}>$</span> <span
-                                        style={{ color: "#325662" }}>200</span></h4>
+                                        style={{ color: "#325662" }}>900</span></h4>
                                 </div>
                             </div>
                         </div>
@@ -121,14 +152,14 @@ function landing() {
                                     readable content of a page when looking at its layout. The point of using Lorem Ipsum is
                                     that it has a more-or-less normal distribution of letters</p>
                                 <div className="btn_main">
-                                    <div className="buy_bt">
-                                        <Link to="/login">
-                                            Buy Now
-                                        </Link>
+
+                                    <div className="buy_bt" onClick={() => handleClick(70000, "Trail Bikes", 2,
+                                        "Designed for speed and performance on paved roads, these bikes feature lightweight frames, narrow tires, and drop handlebars for aerodynamic riding."
+                                    )} >
+                                        <a href="#">Buy Now</a>
                                     </div>
                                     <h4 className="price_text">Price <span style={{ color: "#f7c17b" }}>$</span> <span
-                                        style={{ color: "#325662" }}>200</span></h4>
-
+                                        style={{ color: "#325662" }}>700</span></h4>
                                 </div>
                             </div>
                             <div className="col-md-6">
@@ -139,12 +170,65 @@ function landing() {
                             </div>
                         </div>
                     </div>
+                    <div className="cycle_section_2 layout_padding pt-0">
+                        <div className="row">
+                            <div className="col-md-6">
+                                <div className="box_main">
+                                    <h6 className="number_text">03</h6>
+                                    <div className="image_2"><img src={IMAGES.sale4} /></div>
+                                </div>
+                            </div>
+                            <div className="col-md-6">
+                                <h1 className="cycles_text">Stunt Bikes</h1>
+                                <p className="lorem_text">It is a long established fact that a reader will be distracted by the
+                                    readable content of a page when looking at its layout. The point of using Lorem Ipsum is
+                                    that it has a more-or-less normal distribution of letters</p>
+                                <div className="btn_main">
+                                    <div className="btn_main">
+
+                                        <div className="buy_bt" onClick={() => handleClick(80000, "Stunt Bikes", 3,
+                                            "Designed for speed and performance on paved roads, these bikes feature lightweight frames, narrow tires, and drop handlebars for aerodynamic riding."
+                                        )} >
+                                            <a href="#">Buy Now</a>
+                                        </div>
+                                        <h4 className="price_text">Price <span style={{ color: "#f7c17b" }}>$</span> <span
+                                            style={{ color: "#325662" }}>800</span></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="cycle_section_3 layout_padding">
+                        <div className="row">
+                            <div className="col-md-6">
+                                <h1 className="cycles_text">Electric Bikes</h1>
+                                <p className="lorem_text">It is a long established fact that a reader will be distracted by the
+                                    readable content of a page when looking at its layout. The point of using Lorem Ipsum is
+                                    that it has a more-or-less normal distribution of letters</p>
+                                <div className="btn_main">
+                                    <div className="buy_bt" onClick={() => handleClick(80000, "Electric Bikes", 4,
+                                        "Mountain bikes equipped with electric motors for assistance on tough climbs and long rides."
+                                    )} >
+                                        <a href="#">Buy Now</a>
+                                    </div>
+                                    <h4 className="price_text">Price <span style={{ color: "#f7c17b" }}>$</span> <span
+                                        style={{ color: "#325662" }}>800</span></h4>
+                                </div>
+                            </div>
+                            <div className="col-md-6">
+                                <div className="box_main_3">
+                                    <h6 className="number_text_2">0</h6>
+                                    <div className="image_2"><img src={IMAGES.sale5} /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div className="read_btn_main">
                         <div className="read_bt"><a href="#">Read More</a></div>
                     </div>
                 </div>
-            </div>
+            </div >
 
             <div className="about_section layout_padding" id="about">
                 <div className="container">

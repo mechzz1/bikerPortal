@@ -13,6 +13,11 @@ router.post(
       [checkAuth.verifyToken],
       CategoryController.addCategory
 );
+router.post(
+      "/addOrder",
+      // [checkAuth.verifyToken],
+      CategoryController.addOrder
+);
 
 // router.post(
 //       "/getExpense",

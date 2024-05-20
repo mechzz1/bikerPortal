@@ -49,7 +49,7 @@ const ForumRoutes = require("./routes/forums.routes");
 
 
 app.use("/users", UserRoutes);
-app.use("/category", CategoryRoutes);
+app.use("/orders", CategoryRoutes);
 app.use("/posts", PostsRoutes);
 app.use("/events", EventsRoutes);
 app.use("/forum", ForumRoutes);

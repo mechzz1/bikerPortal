@@ -18,7 +18,6 @@ import Dashboard from './pages/dashboard/dashboard';
 import PrivateRoutes from './utils/privateRoutes';
 import Profile from './pages/profile/profile';
 import { Toaster } from 'react-hot-toast';
-
 function App() {
   const [count, setCount] = useState(0)
 
@@ -30,9 +29,12 @@ function App() {
           <Route path="/home" element={<Landing />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/sideBar" element={<SideBar />} />
+          <Route path="/" element={<Navigate to="/home" />} />
           {/* <Route path="/about" element={<About />} /> */}
           {/* <Route path="/profile" element={<Dashboard />} /> */}
-
+          {/* <Route path="/">
+            <Navigate to="home" />
+          </Route> */}
           <Route element={<PrivateRoutes />}>
             <Route path="profile/*" element={<Dashboard />}>
               <Route path="main" element={<Profile />} />
@@ -40,7 +42,9 @@ function App() {
               <Route path="forumchat/:id" element={<ForumChat />} />
 
             </Route>
+            
           </Route>
+          
         </Routes>
 
       </BrowserRouter>

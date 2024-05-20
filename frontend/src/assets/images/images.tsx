@@ -8,6 +8,9 @@ const IMAGES = {
     sale1 : new URL('./sale.png', import.meta.url).href,
     sale2 : new URL('./sale2.png', import.meta.url).href,
     sale3 : new URL('./sale3.png', import.meta.url).href,
+    sale4 : new URL('./sale4.png', import.meta.url).href,
+    sale5 : new URL('./sale5.png', import.meta.url).href,
+
     aboutBike : new URL('./aboutBike.png', import.meta.url).href,
     user : new URL('./fuser.png', import.meta.url).href,
     founder1 : new URL('./founder1.jpg', import.meta.url).href,
