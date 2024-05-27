@@ -22,7 +22,7 @@ EventsController.getAll = async (req, res) => {
             const post = await EventsService.getAll({
                   include: {
                     model: db.User,
-                    attributes: ['name'], // Specify the attributes you want to retrieve from the User model
+                    attributes: ['name'], 
                   },
                   order: [['createdAt', 'DESC']],
                 });

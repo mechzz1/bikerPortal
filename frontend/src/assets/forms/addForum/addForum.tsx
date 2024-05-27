@@ -6,6 +6,8 @@ import axios from 'axios'
 import { zodResolver } from '@hookform/resolvers/zod';
 import styles from './login.module.css'
 import toast from 'react-hot-toast'
+import { environment } from '../../../environments/environment';
+
 const schema = z.object({
     topic: z.string().min(3, { message: "Topicis required" }),
     name: z.string().min(3, { message: "Name required" }),
@@ -18,6 +20,8 @@ interface ChildProps {
 function addForum({ onClick }: ChildProps) {
     const { register, handleSubmit, formState: { errors } } = useForm<FormData>({ resolver: zodResolver(schema) });
     const navigate = useNavigate();
+    const baseUrl = environment.url;
+
     const onSubmit = (data: FieldValues) => {
 
         const userData = sessionStorage.getItem('user');
@@ -29,7 +33,7 @@ function addForum({ onClick }: ChildProps) {
         let config = {
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'http://bike.syncstaging.com/forum/add',
+            url: `${baseUrl}/forum/add`,
             headers: {
                 'Content-Type': 'application/json',
                 'access-token': `${token}`

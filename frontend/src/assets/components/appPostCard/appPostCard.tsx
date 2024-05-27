@@ -7,8 +7,10 @@ import toast from 'react-hot-toast';
 import PostInfo from '../../../models/postInfo';
 import dateFormat, { masks } from "dateformat";
 import IMAGES from '../../images/images';
+import { environment } from '../../../environments/environment';
 function appPostCard() {
     const [visible, setVisible] = useState(false);
+    const baseUrl = environment.url;
     const [data, setData] = useState<PostInfo[]>([]);
     const handleClick = () => {
         setVisible(false)
@@ -24,7 +26,7 @@ function appPostCard() {
     let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'http://bike.syncstaging.com/posts/getAll',
+        url: `${baseUrl}/posts/getAll`,
         headers: {
             'Content-Type': 'application/json',
             'access-token': `${token}`

@@ -6,6 +6,7 @@ import axios from 'axios'
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Calendar } from 'primereact/calendar';
 import toast from 'react-hot-toast'
+import { environment } from '../../../environments/environment'
 const schema = z.object({
     comment: z.string().min(3, { message: "Comment required" }),
 })
@@ -16,7 +17,7 @@ interface ChildProps {
 function addComment({ onClick }: ChildProps) {
     const id = useParams();
     console.log(id);
-
+    const baseUrl = environment.url;
     const { register, handleSubmit, formState: { errors } , reset  } = useForm<FormData>({ resolver: zodResolver(schema) });
     const navigate = useNavigate();
     const onSubmit = (data: FieldValues) => {
@@ -31,7 +32,7 @@ function addComment({ onClick }: ChildProps) {
         let config = {
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'http://bike.syncstaging.com/forum/addComment',
+            url: `${baseUrl}/forum/addComment`,
             headers: {
                 'Content-Type': 'application/json',
                 'access-token': `${token}`

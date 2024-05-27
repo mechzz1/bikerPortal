@@ -5,6 +5,7 @@ import { FieldValues, useForm } from 'react-hook-form'
 import axios from 'axios'
 import { zodResolver } from '@hookform/resolvers/zod';
 import styles from './signup.module.css'
+import { environment } from '../../environments/environment'
 const schema = z.object({
     userName: z.string().min(3, { message: "User Name is required" }),
     name: z.string().min(3, { message: "Name is required" }),
@@ -15,13 +16,14 @@ type FormData = z.infer<typeof schema>;
 function signup() {
     const { register, handleSubmit, formState: { errors } } = useForm<FormData>({ resolver: zodResolver(schema) });
     const navigate = useNavigate();
+    const baseUrl = environment.url;
     const onSubmit = (data: FieldValues) => {
 
         console.log(data);
         let config = {
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'http://bike.syncstaging.com/users/register',
+            url: `${baseUrl}/users/register`,
             headers: {
                 'Content-Type': 'application/json'
             },

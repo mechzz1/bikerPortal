@@ -6,6 +6,8 @@ import AddForum from '../../assets/forms/addForum/addForum';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import PostInfo from '../../models/postInfo';
+import { environment } from '../../environments/environment';
+
 function forums() {
     const [visible, setVisible] = useState(false);
     const [data, setData] = useState<PostInfo[]>([]);
@@ -14,6 +16,7 @@ function forums() {
         getAllPosts();
 
     };
+    const baseUrl = environment.url;
 
     const userData = sessionStorage.getItem('user');
     let token = null;
@@ -24,7 +27,7 @@ function forums() {
     let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'http://bike.syncstaging.com/forum/getAll',
+        url: `${baseUrl}/forum/getAll`,
         headers: {
             'Content-Type': 'application/json',
             'access-token': `${token}`

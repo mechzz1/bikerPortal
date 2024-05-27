@@ -4,9 +4,10 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import ProfileInfo from '../../../models/profileInfo';
 import dateFormat from 'dateformat';
+import { environment } from '../../../environments/environment';
 function appProfilecard2() {
     const [data, setData] = useState<ProfileInfo | null>(null);
-
+    const baseUrl = environment.url;
     const userData = sessionStorage.getItem('user');
     let token = null;
     if (userData !== null) {
@@ -16,7 +17,7 @@ function appProfilecard2() {
     let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'http://bike.syncstaging.com/users/getUser',
+        url: `${baseUrl}/users/getUser`,
         headers: {
             'Content-Type': 'application/json',
             'access-token': `${token}`

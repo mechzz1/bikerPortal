@@ -5,6 +5,7 @@ import AddEvent from '../../forms/addEvent/addEvent';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import PostInfo from '../../../models/postInfo';
+import { environment } from '../../../environments/environment';
 interface ImageData {
     id: string;
     alt_description: string;
@@ -22,7 +23,7 @@ function appEventsBar() {
     const [visible, setVisible] = useState(false);
     const [data, setData] = useState<PostInfo[]>([]);
     const [images, setImages] = useState<ImageData[]>([]);
-
+    const baseUrl = environment.url;
 
     const handleClick = () => {
         setVisible(false)
@@ -36,7 +37,7 @@ function appEventsBar() {
     let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'http://bike.syncstaging.com/events/getAll',
+        url: `${baseUrl}/events/getAll`,
         headers: {
             'Content-Type': 'application/json',
             'access-token': `${token}`

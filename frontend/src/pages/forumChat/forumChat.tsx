@@ -8,6 +8,8 @@ import toast from 'react-hot-toast';
 import PostInfo from '../../models/postInfo';
 import dateFormat from 'dateformat';
 import AddComment from '../../assets/forms/addComment/addComment';
+import { environment } from '../../environments/environment';
+
 function forumChat() {
     const id = {
         id: useParams()
@@ -23,6 +25,7 @@ function forumChat() {
     const [singleData, setSingleData] = useState<any>();
     const [chats, setChats] = useState<any[]>([]);
 
+    const baseUrl = environment.url;
 
     let token:any = null;
     if (userData !== null) {
@@ -32,7 +35,7 @@ function forumChat() {
     let config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'http://bike.syncstaging.com/forum/get',
+        url: `${baseUrl}/forum/get`,
         headers: {
             'Content-Type': 'application/json',
             'access-token': `${token}`
@@ -55,7 +58,7 @@ function forumChat() {
         let config = {
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'http://bike.syncstaging.com/forum/getAllChats',
+            url: `${baseUrl}/forum/getAllChats`,
             headers: {
                 'Content-Type': 'application/json',
                 'access-token': `${token}`

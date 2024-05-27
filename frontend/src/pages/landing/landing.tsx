@@ -10,8 +10,10 @@ import { CiPhone } from "react-icons/ci";
 import { MdOutlineAlternateEmail } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { environment } from '../../environments/environment';
 
 function landing() {
+    const baseUrl = environment.url
     const order = async (price: number, name: string, id: number, description: string) => {
         let data = {
             price: price,
@@ -21,7 +23,7 @@ function landing() {
         };
 
         try {
-            const response = await axios.post('http://bike.syncstaging.com/orders/addOrder', data);
+            const response = await axios.post(`${baseUrl}/orders/addOrder`, data);
 
             if (response.status !== 200) {
                 throw new Error('Network response was not ok');
@@ -32,15 +34,13 @@ function landing() {
             if (responseData.url) {
                 window.location.href = `${responseData.url}`;
             }
-            // Handle success - Maybe show a success message or redirect the user
         } catch (error) {
-            // Handle errors - Display an error message or perform necessary actions
             console.error('There was an error!', error);
         }
 
     }
     const handleClick = (price: number, name: string, id: number, description: string) => {
-        order(price, name, id, description); // Replace with actual values or make it dynamic
+        order(price, name, id, description); 
     };
     return (
         <>
